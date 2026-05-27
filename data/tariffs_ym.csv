@@ -1,0 +1,41 @@
+canonical_category_code,scheme,commission_pct,last_mile_pct,last_mile_max_rub,acquiring_pct,packaging_fee_rub,storage_free_days,storage_per_liter_day_rub,cofinance_pct,default_promo_pct,return_fee_rub,disposal_fee_rub,default_buyout_rate,default_return_rate,valid_from,source_url,comment
+electronics-smartphones,FBY,0.0500,0.0450,500,0.0150,15,60,0.10,0,0.05,30,30,0.95,0.05,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,Смартфоны
+electronics-smartphones,FBS,0.0600,0.0450,500,0.0150,0,0,0,0,0.05,30,30,0.95,0.05,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,Смартфоны
+electronics-accessories,FBY,0.0800,0.0450,500,0.0150,15,60,0.10,0,0.05,30,30,0.95,0.05,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,Аксессуары
+electronics-accessories,FBS,0.0900,0.0450,500,0.0150,0,0,0,0,0.05,30,30,0.95,0.05,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,Аксессуары
+electronics-audio,FBY,0.0600,0.0450,500,0.0150,15,60,0.10,0,0.05,30,30,0.95,0.05,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,Аудиотехника
+electronics-audio,FBS,0.0700,0.0450,500,0.0150,0,0,0,0,0.05,30,30,0.95,0.05,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,Аудиотехника
+electronics-laptops-pc,FBY,0.0500,0.0450,500,0.0150,15,60,0.12,0,0.05,30,30,0.95,0.05,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,Ноутбуки и ПК
+electronics-laptops-pc,FBS,0.0600,0.0450,500,0.0150,0,0,0,0,0.05,30,30,0.95,0.05,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,Ноутбуки и ПК
+appl-kitchen-small,FBY,0.0800,0.0450,500,0.0150,15,60,0.12,0,0.05,30,30,0.95,0.05,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,Малая кухонная техника
+appl-kitchen-small,FBS,0.0900,0.0450,500,0.0150,0,0,0,0,0.05,30,30,0.95,0.05,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,Малая кухонная техника
+appl-personal-care,FBY,0.0800,0.0450,500,0.0150,15,60,0.10,0,0.05,30,30,0.95,0.05,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,Уход за собой
+appl-personal-care,FBS,0.0900,0.0450,500,0.0150,0,0,0,0,0.05,30,30,0.95,0.05,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,Уход за собой
+cloth-women,FBY,0.0700,0.0450,500,0.0150,15,60,0.10,0,0.08,30,30,0.75,0.25,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,Женская одежда
+cloth-women,FBS,0.0800,0.0450,500,0.0150,0,0,0,0,0.08,30,30,0.75,0.25,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,Женская одежда
+cloth-men,FBY,0.0700,0.0450,500,0.0150,15,60,0.10,0,0.08,30,30,0.78,0.22,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,Мужская одежда
+cloth-men,FBS,0.0800,0.0450,500,0.0150,0,0,0,0,0.08,30,30,0.78,0.22,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,Мужская одежда
+cloth-shoes,FBY,0.0700,0.0450,500,0.0150,15,60,0.10,0,0.08,30,30,0.72,0.28,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,Обувь
+cloth-shoes,FBS,0.0800,0.0450,500,0.0150,0,0,0,0,0.08,30,30,0.72,0.28,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,Обувь
+cloth-accessories,FBY,0.0900,0.0450,500,0.0150,15,60,0.10,0,0.08,30,30,0.88,0.12,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,Аксессуары одежды
+cloth-accessories,FBS,0.1000,0.0450,500,0.0150,0,0,0,0,0.08,30,30,0.88,0.12,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,Аксессуары одежды
+beauty-skincare,FBY,0.0800,0.0450,500,0.0150,15,60,0.10,0,0.06,30,30,0.90,0.10,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,Уходовая косметика
+beauty-skincare,FBS,0.0900,0.0450,500,0.0150,0,0,0,0,0.06,30,30,0.90,0.10,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,Уходовая косметика
+beauty-makeup,FBY,0.0800,0.0450,500,0.0150,15,60,0.10,0,0.06,30,30,0.90,0.10,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,Декоративная косметика
+beauty-makeup,FBS,0.0900,0.0450,500,0.0150,0,0,0,0,0.06,30,30,0.90,0.10,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,Декоративная косметика
+beauty-personal-hygiene,FBY,0.0800,0.0450,500,0.0150,15,60,0.10,0,0.05,30,30,0.92,0.08,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,Личная гигиена
+beauty-personal-hygiene,FBS,0.0900,0.0450,500,0.0150,0,0,0,0,0.05,30,30,0.92,0.08,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,Личная гигиена
+home-textile,FBY,0.0900,0.0450,500,0.0150,15,60,0.10,0,0.06,30,30,0.88,0.12,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,Текстиль
+home-textile,FBS,0.1000,0.0450,500,0.0150,0,0,0,0,0.06,30,30,0.88,0.12,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,Текстиль
+home-tableware,FBY,0.0900,0.0450,500,0.0150,15,60,0.11,0,0.06,30,30,0.90,0.10,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,Посуда
+home-tableware,FBS,0.1000,0.0450,500,0.0150,0,0,0,0,0.06,30,30,0.90,0.10,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,Посуда
+home-decor-lighting,FBY,0.0900,0.0450,500,0.0150,15,60,0.11,0,0.06,30,30,0.90,0.10,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,Декор
+home-decor-lighting,FBS,0.1000,0.0450,500,0.0150,0,0,0,0,0.06,30,30,0.90,0.10,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,Декор
+kids-toys,FBY,0.0900,0.0450,500,0.0150,15,60,0.10,0,0.06,30,30,0.90,0.10,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,Игрушки
+kids-toys,FBS,0.1000,0.0450,500,0.0150,0,0,0,0,0.06,30,30,0.90,0.10,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,Игрушки
+kids-hygiene,FBY,0.0900,0.0450,500,0.0150,15,60,0.10,0,0.05,30,30,0.95,0.05,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,Подгузники
+kids-hygiene,FBS,0.1000,0.0450,500,0.0150,0,0,0,0,0.05,30,30,0.95,0.05,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,Подгузники
+sport-fitness,FBY,0.0900,0.0450,500,0.0150,15,60,0.12,0,0.06,30,30,0.85,0.15,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,Фитнес
+sport-fitness,FBS,0.1000,0.0450,500,0.0150,0,0,0,0,0.06,30,30,0.85,0.15,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,Фитнес
+food-healthy,FBY,0.0900,0.0450,500,0.0150,15,60,0.10,0,0.05,30,30,0.95,0.05,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,БАДы и здоровое питание
+food-healthy,FBS,0.1000,0.0450,500,0.0150,0,0,0,0,0.05,30,30,0.95,0.05,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,БАДы и здоровое питание

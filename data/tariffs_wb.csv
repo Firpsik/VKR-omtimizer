@@ -1,0 +1,41 @@
+canonical_category_code,scheme,commission_pct,ktr,warehouse_coef_default,storage_per_liter_day_rub,return_fee_rub,disposal_fee_rub,default_buyout_rate,default_return_rate,default_promo_pct,valid_from,source_url,comment
+electronics-smartphones,FBO,0.1400,1.0,1.0,0.10,50,33,0.95,0.05,0.05,2026-01-01,https://seller.wildberries.ru/general-information/about-fees,Электроника: смартфоны
+electronics-smartphones,FBS,0.1400,1.0,1.0,0.10,50,33,0.95,0.05,0.05,2026-01-01,https://seller.wildberries.ru/general-information/about-fees,Электроника: смартфоны
+electronics-accessories,FBO,0.2200,1.0,1.0,0.10,50,33,0.95,0.05,0.05,2026-01-01,https://seller.wildberries.ru/general-information/about-fees,Аксессуары для электроники
+electronics-accessories,FBS,0.2200,1.0,1.0,0.10,50,33,0.95,0.05,0.05,2026-01-01,https://seller.wildberries.ru/general-information/about-fees,Аксессуары для электроники
+electronics-audio,FBO,0.1700,1.0,1.0,0.10,50,33,0.95,0.05,0.05,2026-01-01,https://seller.wildberries.ru/general-information/about-fees,Аудиотехника
+electronics-audio,FBS,0.1700,1.0,1.0,0.10,50,33,0.95,0.05,0.05,2026-01-01,https://seller.wildberries.ru/general-information/about-fees,Аудиотехника
+electronics-laptops-pc,FBO,0.1400,1.2,1.0,0.12,50,33,0.95,0.05,0.05,2026-01-01,https://seller.wildberries.ru/general-information/about-fees,Ноутбуки и ПК
+electronics-laptops-pc,FBS,0.1400,1.2,1.0,0.12,50,33,0.95,0.05,0.05,2026-01-01,https://seller.wildberries.ru/general-information/about-fees,Ноутбуки и ПК
+appl-kitchen-small,FBO,0.1900,1.2,1.0,0.12,50,33,0.95,0.05,0.05,2026-01-01,https://seller.wildberries.ru/general-information/about-fees,Малая кухонная техника
+appl-kitchen-small,FBS,0.1900,1.2,1.0,0.12,50,33,0.95,0.05,0.05,2026-01-01,https://seller.wildberries.ru/general-information/about-fees,Малая кухонная техника
+appl-personal-care,FBO,0.1900,1.0,1.0,0.10,50,33,0.95,0.05,0.05,2026-01-01,https://seller.wildberries.ru/general-information/about-fees,Уход за собой
+appl-personal-care,FBS,0.1900,1.0,1.0,0.10,50,33,0.95,0.05,0.05,2026-01-01,https://seller.wildberries.ru/general-information/about-fees,Уход за собой
+cloth-women,FBO,0.2200,1.0,1.0,0.10,50,33,0.75,0.25,0.07,2026-01-01,https://seller.wildberries.ru/general-information/about-fees,Женская одежда
+cloth-women,FBS,0.2200,1.0,1.0,0.10,50,33,0.75,0.25,0.07,2026-01-01,https://seller.wildberries.ru/general-information/about-fees,Женская одежда
+cloth-men,FBO,0.2200,1.0,1.0,0.10,50,33,0.78,0.22,0.07,2026-01-01,https://seller.wildberries.ru/general-information/about-fees,Мужская одежда
+cloth-men,FBS,0.2200,1.0,1.0,0.10,50,33,0.78,0.22,0.07,2026-01-01,https://seller.wildberries.ru/general-information/about-fees,Мужская одежда
+cloth-shoes,FBO,0.2200,1.0,1.0,0.10,50,33,0.72,0.28,0.07,2026-01-01,https://seller.wildberries.ru/general-information/about-fees,Обувь
+cloth-shoes,FBS,0.2200,1.0,1.0,0.10,50,33,0.72,0.28,0.07,2026-01-01,https://seller.wildberries.ru/general-information/about-fees,Обувь
+cloth-accessories,FBO,0.2200,1.0,1.0,0.10,50,33,0.88,0.12,0.07,2026-01-01,https://seller.wildberries.ru/general-information/about-fees,Аксессуары одежды
+cloth-accessories,FBS,0.2200,1.0,1.0,0.10,50,33,0.88,0.12,0.07,2026-01-01,https://seller.wildberries.ru/general-information/about-fees,Аксессуары одежды
+beauty-skincare,FBO,0.1700,1.0,1.0,0.10,50,33,0.90,0.10,0.06,2026-01-01,https://seller.wildberries.ru/general-information/about-fees,Уходовая косметика
+beauty-skincare,FBS,0.1700,1.0,1.0,0.10,50,33,0.90,0.10,0.06,2026-01-01,https://seller.wildberries.ru/general-information/about-fees,Уходовая косметика
+beauty-makeup,FBO,0.1700,1.0,1.0,0.10,50,33,0.90,0.10,0.06,2026-01-01,https://seller.wildberries.ru/general-information/about-fees,Декоративная косметика
+beauty-makeup,FBS,0.1700,1.0,1.0,0.10,50,33,0.90,0.10,0.06,2026-01-01,https://seller.wildberries.ru/general-information/about-fees,Декоративная косметика
+beauty-personal-hygiene,FBO,0.1600,1.0,1.0,0.10,50,33,0.92,0.08,0.05,2026-01-01,https://seller.wildberries.ru/general-information/about-fees,Личная гигиена
+beauty-personal-hygiene,FBS,0.1600,1.0,1.0,0.10,50,33,0.92,0.08,0.05,2026-01-01,https://seller.wildberries.ru/general-information/about-fees,Личная гигиена
+home-textile,FBO,0.2100,1.0,1.0,0.10,50,33,0.88,0.12,0.06,2026-01-01,https://seller.wildberries.ru/general-information/about-fees,Текстиль для дома
+home-textile,FBS,0.2100,1.0,1.0,0.10,50,33,0.88,0.12,0.06,2026-01-01,https://seller.wildberries.ru/general-information/about-fees,Текстиль для дома
+home-tableware,FBO,0.2100,1.1,1.0,0.11,50,33,0.90,0.10,0.06,2026-01-01,https://seller.wildberries.ru/general-information/about-fees,Посуда
+home-tableware,FBS,0.2100,1.1,1.0,0.11,50,33,0.90,0.10,0.06,2026-01-01,https://seller.wildberries.ru/general-information/about-fees,Посуда
+home-decor-lighting,FBO,0.2000,1.1,1.0,0.11,50,33,0.90,0.10,0.06,2026-01-01,https://seller.wildberries.ru/general-information/about-fees,Декор и освещение
+home-decor-lighting,FBS,0.2000,1.1,1.0,0.11,50,33,0.90,0.10,0.06,2026-01-01,https://seller.wildberries.ru/general-information/about-fees,Декор и освещение
+kids-toys,FBO,0.1700,1.0,1.0,0.10,50,33,0.90,0.10,0.06,2026-01-01,https://seller.wildberries.ru/general-information/about-fees,Игрушки
+kids-toys,FBS,0.1700,1.0,1.0,0.10,50,33,0.90,0.10,0.06,2026-01-01,https://seller.wildberries.ru/general-information/about-fees,Игрушки
+kids-hygiene,FBO,0.1600,1.0,1.0,0.10,50,33,0.95,0.05,0.05,2026-01-01,https://seller.wildberries.ru/general-information/about-fees,Подгузники и гигиена
+kids-hygiene,FBS,0.1600,1.0,1.0,0.10,50,33,0.95,0.05,0.05,2026-01-01,https://seller.wildberries.ru/general-information/about-fees,Подгузники и гигиена
+sport-fitness,FBO,0.1900,1.2,1.0,0.12,50,33,0.85,0.15,0.06,2026-01-01,https://seller.wildberries.ru/general-information/about-fees,Фитнес и тренажёры
+sport-fitness,FBS,0.1900,1.2,1.0,0.12,50,33,0.85,0.15,0.06,2026-01-01,https://seller.wildberries.ru/general-information/about-fees,Фитнес и тренажёры
+food-healthy,FBO,0.1900,1.0,1.0,0.10,50,33,0.95,0.05,0.05,2026-01-01,https://seller.wildberries.ru/general-information/about-fees,БАДы и здоровое питание
+food-healthy,FBS,0.1900,1.0,1.0,0.10,50,33,0.95,0.05,0.05,2026-01-01,https://seller.wildberries.ru/general-information/about-fees,БАДы и здоровое питание

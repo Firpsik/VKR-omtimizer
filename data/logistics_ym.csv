@@ -1,0 +1,11 @@
+marketplace_code,scheme,volume_max_l,base_rub,valid_from,source_url
+ym,FBY,1.000,70.00,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main
+ym,FBY,5.000,120.00,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main
+ym,FBY,15.000,180.00,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main
+ym,FBY,25.000,250.00,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main
+ym,FBY,50.000,350.00,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main
+ym,FBS,1.000,90.00,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main
+ym,FBS,5.000,150.00,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main
+ym,FBS,15.000,220.00,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main
+ym,FBS,25.000,300.00,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main
+ym,FBS,50.000,400.00,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main

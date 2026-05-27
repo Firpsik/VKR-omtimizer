@@ -1,0 +1,16 @@
+group_code,group_name,sort_order
+electronics,Электроника,1
+home_appliances,Бытовая техника,2
+clothing,Одежда и обувь,3
+beauty_health,Красота и здоровье,4
+home_interior,Дом и интерьер,5
+furniture,Мебель,6
+garden,"Дача, сад и огород",7
+construction,Строительство и ремонт,8
+kids,Детские товары,9
+sport,Спорт и активный отдых,10
+auto,Автотовары,11
+pets,Зоотовары,12
+food,Продукты питания,13
+books_hobbies,"Книги, канцелярия, хобби",14
+jewelry,Ювелирные изделия и часы,15

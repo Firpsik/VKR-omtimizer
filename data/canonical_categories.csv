@@ -1,0 +1,77 @@
+category_code,category_name,group_code,sort_order,requires_marking,marking_cost_per_unit_rub
+electronics-smartphones,Смартфоны,electronics,1,false,0
+electronics-tablets,Планшеты и электронные книги,electronics,2,false,0
+electronics-laptops-pc,Ноутбуки и ПК,electronics,3,false,0
+electronics-audio,Аудиотехника,electronics,4,false,0
+electronics-photo-video,Фото- и видеотехника,electronics,5,true,3
+electronics-tv,Телевизоры,electronics,6,false,0
+electronics-accessories,Аксессуары для электроники,electronics,7,false,0
+appl-kitchen-major,Крупная техника для кухни,home_appliances,1,false,0
+appl-kitchen-small,Малая техника для кухни,home_appliances,2,false,0
+appl-climate,Климатическая техника,home_appliances,3,false,0
+appl-home-care,Уход за домом,home_appliances,4,false,0
+appl-personal-care,Уход за собой,home_appliances,5,false,0
+cloth-women,Женская одежда,clothing,1,true,3
+cloth-men,Мужская одежда,clothing,2,true,3
+cloth-kids,Детская одежда,clothing,3,true,3
+cloth-shoes,Обувь,clothing,4,true,3
+cloth-sport,Спортивная одежда и обувь,clothing,5,true,3
+cloth-accessories,"Сумки, ремни, головные уборы",clothing,6,false,0
+beauty-skincare,Уходовая косметика,beauty_health,1,false,0
+beauty-makeup,Декоративная косметика,beauty_health,2,false,0
+beauty-perfume,Парфюмерия,beauty_health,3,true,3
+beauty-personal-hygiene,Личная гигиена,beauty_health,4,false,0
+beauty-pharmacy,Аптека и БАДы,beauty_health,5,true,3
+home-textile,Текстиль для дома,home_interior,1,true,3
+home-tableware,Посуда,home_interior,2,false,0
+home-decor-lighting,Декор и освещение,home_interior,3,false,0
+home-storage,Хранение,home_interior,4,false,0
+home-bath-kitchen,Ванная и кухня,home_interior,5,false,0
+furn-soft,Мягкая мебель,furniture,1,false,0
+furn-case,Корпусная мебель,furniture,2,false,0
+furn-kitchen,Кухонная мебель,furniture,3,false,0
+furn-office,Офисная мебель,furniture,4,false,0
+furn-kids,Детская мебель,furniture,5,false,0
+garden-tech,Садовая техника,garden,1,false,0
+garden-plants,Растения и семена,garden,2,false,0
+garden-tools,Садовый инвентарь,garden,3,false,0
+garden-outdoor-furn,Уличная мебель,garden,4,false,0
+garden-grills,Грили и мангалы,garden,5,false,0
+const-power-tools,Электроинструмент,construction,1,false,0
+const-hand-tools,Ручной инструмент,construction,2,false,0
+const-plumbing,Сантехника,construction,3,false,0
+const-electric,Электротовары,construction,4,false,0
+const-finishing,Отделочные материалы,construction,5,false,0
+kids-toys,Игрушки,kids,1,false,0
+kids-food,Детское питание,kids,2,true,3
+kids-hygiene,Подгузники и гигиена,kids,3,false,0
+kids-carriers,Коляски и автокресла,kids,4,false,0
+kids-school,Школа и канцелярия,kids,5,false,0
+sport-fitness,Фитнес и тренажёры,sport,1,false,0
+sport-cycle,Велоспорт,sport,2,false,0
+sport-camping,Туризм и кемпинг,sport,3,false,0
+sport-winter,Зимний спорт,sport,4,false,0
+sport-team,Командные виды спорта,sport,5,false,0
+auto-parts,Автозапчасти,auto,1,false,0
+auto-chemistry,Автохимия и автокосметика,auto,2,false,0
+auto-tires,Шины и диски,auto,3,true,5
+auto-accessories,Аксессуары для авто,auto,4,false,0
+auto-electronics,Электроника для авто,auto,5,false,0
+pets-food,Корма,pets,1,false,0
+pets-care,Уход и гигиена,pets,2,false,0
+pets-accessories,Аксессуары для животных,pets,3,false,0
+pets-toys,Игрушки для животных,pets,4,false,0
+food-grocery,Бакалея,food,1,false,0
+food-drinks-soft,Безалкогольные напитки,food,2,false,0
+food-sweets,Сладости и снеки,food,3,false,0
+food-frozen,Заморозка,food,4,false,0
+food-healthy,Здоровое питание,food,5,false,0
+bh-books,Книги,books_hobbies,1,false,0
+bh-stationery,Канцелярия,books_hobbies,2,false,0
+bh-crafts,Творчество и рукоделие,books_hobbies,3,false,0
+bh-board-games,Настольные игры,books_hobbies,4,false,0
+bh-music-instruments,Музыкальные инструменты,books_hobbies,5,false,0
+jewelry-gold,Украшения из золота,jewelry,1,true,8
+jewelry-silver,Украшения из серебра,jewelry,2,true,8
+jewelry-fashion,Бижутерия,jewelry,3,false,0
+jewelry-watches,Наручные часы,jewelry,4,false,0

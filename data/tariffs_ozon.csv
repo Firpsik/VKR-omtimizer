@@ -1,0 +1,41 @@
+canonical_category_code,scheme,commission_pct,last_mile_pct,last_mile_min_rub,last_mile_max_rub,acquiring_pct,processing_fee_rub,storage_free_days,storage_per_liter_day_rub,locality_index_pct,default_promo_pct,default_seller_bonus_pct,return_fee_rub,disposal_fee_rub,default_buyout_rate,default_return_rate,valid_from,source_url,comment
+electronics-smartphones,FBO,0.1000,0.0550,20,500,0.0150,0,60,0.10,0,0.05,0.02,80,75,0.95,0.05,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,Смартфоны
+electronics-smartphones,FBS,0.1000,0.0550,20,500,0.0150,35,0,0,0,0.05,0.02,80,75,0.95,0.05,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,Смартфоны
+electronics-accessories,FBO,0.1800,0.0550,20,500,0.0150,0,60,0.10,0,0.05,0.02,80,75,0.95,0.05,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,Аксессуары
+electronics-accessories,FBS,0.1800,0.0550,20,500,0.0150,35,0,0,0,0.05,0.02,80,75,0.95,0.05,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,Аксессуары
+electronics-audio,FBO,0.1500,0.0550,20,500,0.0150,0,60,0.10,0,0.05,0.02,80,75,0.95,0.05,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,Аудиотехника
+electronics-audio,FBS,0.1500,0.0550,20,500,0.0150,35,0,0,0,0.05,0.02,80,75,0.95,0.05,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,Аудиотехника
+electronics-laptops-pc,FBO,0.0900,0.0550,20,500,0.0150,0,60,0.12,0,0.05,0.02,80,75,0.95,0.05,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,Ноутбуки и ПК
+electronics-laptops-pc,FBS,0.0900,0.0550,20,500,0.0150,35,0,0,0,0.05,0.02,80,75,0.95,0.05,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,Ноутбуки и ПК
+appl-kitchen-small,FBO,0.1600,0.0550,20,500,0.0150,0,60,0.12,0,0.05,0.02,80,75,0.95,0.05,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,Малая кухонная техника
+appl-kitchen-small,FBS,0.1600,0.0550,20,500,0.0150,35,0,0,0,0.05,0.02,80,75,0.95,0.05,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,Малая кухонная техника
+appl-personal-care,FBO,0.1700,0.0550,20,500,0.0150,0,60,0.10,0,0.05,0.02,80,75,0.95,0.05,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,Уход за собой
+appl-personal-care,FBS,0.1700,0.0550,20,500,0.0150,35,0,0,0,0.05,0.02,80,75,0.95,0.05,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,Уход за собой
+cloth-women,FBO,0.1800,0.0550,20,500,0.0150,0,60,0.10,0,0.08,0.02,80,75,0.75,0.25,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,Женская одежда
+cloth-women,FBS,0.1800,0.0550,20,500,0.0150,35,0,0,0,0.08,0.02,80,75,0.75,0.25,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,Женская одежда
+cloth-men,FBO,0.1800,0.0550,20,500,0.0150,0,60,0.10,0,0.08,0.02,80,75,0.78,0.22,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,Мужская одежда
+cloth-men,FBS,0.1800,0.0550,20,500,0.0150,35,0,0,0,0.08,0.02,80,75,0.78,0.22,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,Мужская одежда
+cloth-shoes,FBO,0.1900,0.0550,20,500,0.0150,0,60,0.10,0,0.08,0.02,80,75,0.72,0.28,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,Обувь
+cloth-shoes,FBS,0.1900,0.0550,20,500,0.0150,35,0,0,0,0.08,0.02,80,75,0.72,0.28,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,Обувь
+cloth-accessories,FBO,0.1900,0.0550,20,500,0.0150,0,60,0.10,0,0.08,0.02,80,75,0.88,0.12,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,Аксессуары одежды
+cloth-accessories,FBS,0.1900,0.0550,20,500,0.0150,35,0,0,0,0.08,0.02,80,75,0.88,0.12,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,Аксессуары одежды
+beauty-skincare,FBO,0.1600,0.0550,20,500,0.0150,0,60,0.10,0,0.06,0.02,80,75,0.90,0.10,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,Уходовая косметика
+beauty-skincare,FBS,0.1600,0.0550,20,500,0.0150,35,0,0,0,0.06,0.02,80,75,0.90,0.10,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,Уходовая косметика
+beauty-makeup,FBO,0.1600,0.0550,20,500,0.0150,0,60,0.10,0,0.06,0.02,80,75,0.90,0.10,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,Декоративная косметика
+beauty-makeup,FBS,0.1600,0.0550,20,500,0.0150,35,0,0,0,0.06,0.02,80,75,0.90,0.10,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,Декоративная косметика
+beauty-personal-hygiene,FBO,0.1500,0.0550,20,500,0.0150,0,60,0.10,0,0.05,0.02,80,75,0.92,0.08,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,Личная гигиена
+beauty-personal-hygiene,FBS,0.1500,0.0550,20,500,0.0150,35,0,0,0,0.05,0.02,80,75,0.92,0.08,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,Личная гигиена
+home-textile,FBO,0.1800,0.0550,20,500,0.0150,0,60,0.10,0,0.06,0.02,80,75,0.88,0.12,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,Текстиль
+home-textile,FBS,0.1800,0.0550,20,500,0.0150,35,0,0,0,0.06,0.02,80,75,0.88,0.12,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,Текстиль
+home-tableware,FBO,0.1800,0.0550,20,500,0.0150,0,60,0.11,0,0.06,0.02,80,75,0.90,0.10,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,Посуда
+home-tableware,FBS,0.1800,0.0550,20,500,0.0150,35,0,0,0,0.06,0.02,80,75,0.90,0.10,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,Посуда
+home-decor-lighting,FBO,0.1700,0.0550,20,500,0.0150,0,60,0.11,0,0.06,0.02,80,75,0.90,0.10,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,Декор
+home-decor-lighting,FBS,0.1700,0.0550,20,500,0.0150,35,0,0,0,0.06,0.02,80,75,0.90,0.10,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,Декор
+kids-toys,FBO,0.1600,0.0550,20,500,0.0150,0,60,0.10,0,0.06,0.02,80,75,0.90,0.10,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,Игрушки
+kids-toys,FBS,0.1600,0.0550,20,500,0.0150,35,0,0,0,0.06,0.02,80,75,0.90,0.10,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,Игрушки
+kids-hygiene,FBO,0.1500,0.0550,20,500,0.0150,0,60,0.10,0,0.05,0.02,80,75,0.95,0.05,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,Подгузники
+kids-hygiene,FBS,0.1500,0.0550,20,500,0.0150,35,0,0,0,0.05,0.02,80,75,0.95,0.05,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,Подгузники
+sport-fitness,FBO,0.1700,0.0550,20,500,0.0150,0,60,0.12,0,0.06,0.02,80,75,0.85,0.15,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,Фитнес
+sport-fitness,FBS,0.1700,0.0550,20,500,0.0150,35,0,0,0,0.06,0.02,80,75,0.85,0.15,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,Фитнес
+food-healthy,FBO,0.1700,0.0550,20,500,0.0150,0,60,0.10,0,0.05,0.02,80,75,0.95,0.05,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,БАДы и здоровое питание
+food-healthy,FBS,0.1700,0.0550,20,500,0.0150,35,0,0,0,0.05,0.02,80,75,0.95,0.05,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,БАДы и здоровое питание
