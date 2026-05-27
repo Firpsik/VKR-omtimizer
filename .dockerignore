@@ -1,0 +1,13 @@
+.env
+.env.example
+.git
+.gitignore
+__pycache__
+*.pyc
+*.xlsx
+docs/
+CONTEXT.md
+README.md
+_inspect_xlsx.py
+_verify_data.py
+docker-compose*.yml
