@@ -55,3 +55,7 @@ tariff_rule_ym`. Юнит-экономика считается SQL-функци
 ## Запуск
 
 См. `SETUP.md`.
+
+## Ссылки
+Приложение: https://bbal0tnkd91lbjhra64a.containers.yandexcloud.net
+DashBoard: https://datalens.yandex/5ltlo3l55dxap
