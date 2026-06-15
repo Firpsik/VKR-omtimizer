@@ -124,4 +124,12 @@ def reset_demo_password(new_password: str) -> None:
 def delete_user(user_id: int) -> None:
     engine = get_engine()
     with engine.connect() as conn, conn.begin():
+        pids = [r[0] for r in conn.execute(text(
+            "SELECT product_id FROM mp.products WHERE user_id = :uid"
+        ), {"uid": user_id}).fetchall()]
+        for pid in pids:
+            for tbl in ("sales_history", "optimization_results", "demand_params",
+                        "unit_economics", "product_overrides", "cost_events"):
+                conn.execute(text(f"DELETE FROM mp.{tbl} WHERE product_id = :p"), {"p": pid})
+        conn.execute(text("DELETE FROM mp.products WHERE user_id = :uid"), {"uid": user_id})
         conn.execute(text("DELETE FROM mp.users WHERE user_id = :uid"), {"uid": user_id})

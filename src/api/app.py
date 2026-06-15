@@ -39,7 +39,7 @@ from src.auth import (
 )
 from src.etl.sales_adapters import AdapterError
 
-app = FastAPI(title="АСОП-Маркет — система оптимизации продаж на маркетплейсах")
+app = FastAPI(title="АСМП-Маркет — система мониторинга продаж на маркетплейсах")
 
 TEMPLATES_DIR = Path(__file__).parent / "templates"
 templates = Jinja2Templates(directory=str(TEMPLATES_DIR))
@@ -161,7 +161,7 @@ async def account_delete(user: dict = Depends(require_writeable_user)):
 
 @app.get("/demo")
 async def demo_login():
-    user = find_user_by_email("demo@asop.local")
+    user = find_user_by_email("demo@mail.ru")
     if not user:
         return JSONResponse({"error": "demo не настроен"}, status_code=500)
     response = RedirectResponse("/", status_code=303)
@@ -183,31 +183,41 @@ async def run_optimization(
     cost_rub: float = Form(...),
     promo_rub: float = Form(0.0),
     stock_qty: int | None = Form(None),
+    override_marketplace_code: str = Form("wb"),
     return_rate_override: float = Form(None),
     storage_days_override: int = Form(None),
     ktr_override: float = Form(None),
     kwh_override: float = Form(None),
     promo_pct_override: float = Form(None),
+    packaging_fee_override: float = Form(None),
+    cofinance_pct_override: float = Form(None),
     user: dict = Depends(require_writeable_user),
 ):
     overrides = {}
+    mp_code = (override_marketplace_code or "wb").strip().lower()
     if return_rate_override is not None:
-        overrides["return_rate"] = return_rate_override
+        overrides["return_rate"] = return_rate_override / 100.0
     if storage_days_override is not None:
         overrides["storage_days"] = storage_days_override
-    if ktr_override is not None:
+    if mp_code == "wb" and ktr_override is not None:
         overrides["ktr"] = ktr_override
-    if kwh_override is not None:
+    if mp_code == "wb" and kwh_override is not None:
         overrides["kwh"] = kwh_override
     if promo_pct_override is not None:
-        overrides["promo_pct"] = promo_pct_override
+        overrides["promo_pct"] = promo_pct_override / 100.0
+    if mp_code == "ym" and packaging_fee_override is not None:
+        overrides["packaging_fee_rub"] = packaging_fee_override
+    if mp_code == "ym" and cofinance_pct_override is not None:
+        overrides["cofinance_pct"] = cofinance_pct_override / 100.0
     try:
         result = optimize_single_product(
             sku=sku, name=name, category_code=category_code,
             weight_kg=weight_kg, volume_l=volume_l,
             cost_rub=cost_rub, promo_rub=promo_rub,
             user_id=user["user_id"],
-            overrides=overrides or None, stock_qty=stock_qty,
+            overrides=overrides or None,
+            override_marketplace_code=mp_code,
+            stock_qty_limit=stock_qty,
         )
         if result["n_feasible"] == 0:
             message = (

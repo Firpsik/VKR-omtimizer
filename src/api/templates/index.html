@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>АСОП-Маркет</title>
+    <title>АСМП-Маркет</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -59,8 +59,8 @@
     <header class="border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-6 py-5 flex items-baseline justify-between">
             <div>
-                <h1 class="text-lg font-semibold tracking-tight">АСОП-Маркет</h1>
-                <p class="text-xs text-gray-500 mt-0.5">Аналитическая система оптимизации продаж на маркетплейсах</p>
+                <h1 class="text-lg font-semibold tracking-tight">АСМП-Маркет</h1>
+                <p class="text-xs text-gray-500 mt-0.5">Аналитическая система мониторинга продаж на маркетплейсах</p>
             </div>
             <div class="flex items-center gap-3">
                 {% if user %}
@@ -163,10 +163,10 @@
                     </div>
                 </div>
                 <div>
-                    <label class="block text-[11px] uppercase tracking-wider text-gray-500 mb-1">Кол-во на складе</label>
-                    <input type="number" name="stock_qty" step="1" placeholder="не ограничено"
+                    <label class="block text-[11px] uppercase tracking-wider text-gray-500 mb-1">Количество товара</label>
+                    <input type="number" name="stock_qty" step="1" placeholder="авто"
                            class="w-full px-3 py-2 text-sm bg-white border border-gray-200 rounded-lg focus:border-gray-900 focus:ring-2 focus:ring-gray-900/10 outline-none tabular">
-                    <p class="text-[11px] text-gray-400 mt-1">Пусто — будет посчитан оптимальный объём</p>
+                    <p class="text-[11px] text-gray-400 mt-1">Пусто — программа сама найдёт оптимальное количество</p>
                 </div>
 
                 <details class="border border-gray-200 rounded-lg">
@@ -175,36 +175,63 @@
                         <svg class="w-3 h-3" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
                     </summary>
                     <div class="px-3 pb-3 pt-1 space-y-3">
+                        <div>
+                            <label class="block text-[11px] uppercase tracking-wider text-gray-500 mb-1">Площадка для ручных параметров</label>
+                            <select name="override_marketplace_code" id="overrideMarketplaceCode"
+                                    class="w-full px-2 py-1.5 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-gray-900/10 outline-none">
+                                <option value="wb" selected>Wildberries</option>
+                                <option value="ozon">Ozon</option>
+                                <option value="ym">Яндекс Маркет</option>
+                            </select>
+                            <p class="text-[11px] text-gray-400 mt-1">Поля ниже отмечены по площадкам: <span class="font-medium text-gray-600">WB</span> — только Wildberries, <span class="font-medium text-gray-600">Все МП</span> — доступны везде.</p>
+                        </div>
                         <div class="grid grid-cols-2 gap-3">
                             <div>
-                                <label class="block text-[11px] uppercase tracking-wider text-gray-500 mb-1">% возвратов</label>
-                                <input type="number" name="return_rate_override" step="0.1" min="0" max="1" placeholder="авто"
+                                <label class="block text-[11px] uppercase tracking-wider text-gray-500 mb-1">% возвратов <span class="ml-1 text-[10px] normal-case text-emerald-700">Все МП</span></label>
+                                <input type="number" name="return_rate_override" step="1" min="0" max="100" placeholder="авто"
+                                       data-override-scope="all"
                                        class="w-full px-2 py-1.5 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-gray-900/10 outline-none tabular">
                             </div>
                             <div>
-                                <label class="block text-[11px] uppercase tracking-wider text-gray-500 mb-1">Дни хранения</label>
+                                <label class="block text-[11px] uppercase tracking-wider text-gray-500 mb-1">Дни хранения <span class="ml-1 text-[10px] normal-case text-emerald-700">Все МП</span></label>
                                 <input type="number" name="storage_days_override" step="1" placeholder="авто"
+                                       data-override-scope="all"
                                        class="w-full px-2 py-1.5 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-gray-900/10 outline-none tabular">
                             </div>
                         </div>
                         <div class="grid grid-cols-2 gap-3">
                             <div>
-                                <label class="block text-[11px] uppercase tracking-wider text-gray-500 mb-1">КТР</label>
+                                <label class="block text-[11px] uppercase tracking-wider text-gray-500 mb-1">КТР <span class="ml-1 text-[10px] normal-case text-indigo-700">WB</span></label>
                                 <input type="number" name="ktr_override" step="0.1" placeholder="авто"
+                                       data-override-scope="wb"
                                        class="w-full px-2 py-1.5 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-gray-900/10 outline-none tabular">
                             </div>
                             <div>
-                                <label class="block text-[11px] uppercase tracking-wider text-gray-500 mb-1">Коэф. склада</label>
+                                <label class="block text-[11px] uppercase tracking-wider text-gray-500 mb-1">Коэф. склада <span class="ml-1 text-[10px] normal-case text-indigo-700">WB</span></label>
                                 <input type="number" name="kwh_override" step="0.1" placeholder="авто"
+                                       data-override-scope="wb"
                                        class="w-full px-2 py-1.5 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-gray-900/10 outline-none tabular">
                             </div>
                             <div>
-                                <label class="block text-[11px] uppercase tracking-wider text-gray-500 mb-1">Доля промо</label>
-                                <input type="number" name="promo_pct_override" step="0.1" min="0" max="1" placeholder="авто"
+                                <label class="block text-[11px] uppercase tracking-wider text-gray-500 mb-1">Доля промо, % <span class="ml-1 text-[10px] normal-case text-emerald-700">Все МП</span></label>
+                                <input type="number" name="promo_pct_override" step="1" min="0" max="100" placeholder="авто"
+                                       data-override-scope="all"
+                                       class="w-full px-2 py-1.5 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-gray-900/10 outline-none tabular">
+                            </div>
+                            <div>
+                                <label class="block text-[11px] uppercase tracking-wider text-gray-500 mb-1">Упаковка, ₽ <span class="ml-1 text-[10px] normal-case text-amber-700">ЯМ</span></label>
+                                <input type="number" name="packaging_fee_override" step="1" min="0" placeholder="авто"
+                                       data-override-scope="ym"
+                                       class="w-full px-2 py-1.5 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-gray-900/10 outline-none tabular">
+                            </div>
+                            <div>
+                                <label class="block text-[11px] uppercase tracking-wider text-gray-500 mb-1">Софинансирование, % <span class="ml-1 text-[10px] normal-case text-amber-700">ЯМ</span></label>
+                                <input type="number" name="cofinance_pct_override" step="1" min="0" max="100" placeholder="авто"
+                                       data-override-scope="ym"
                                        class="w-full px-2 py-1.5 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-gray-900/10 outline-none tabular">
                             </div>
                         </div>
-                        <p class="text-[11px] text-gray-400">Пусто — средние значения по тарифу площадки.</p>
+                        <p id="overrideScopeHint" class="text-[11px] text-gray-400">Для каждой площадки доступны только релевантные поля. Недоступные параметры не сохраняются.</p>
                     </div>
                 </details>
 
@@ -221,8 +248,8 @@
                 <span class="text-[11px] uppercase tracking-wider text-gray-400">шаг 2</span>
             </div>
             <p class="text-[11px] text-gray-500 mb-4 leading-relaxed">
-                Есть история — оптимум по МНК-регрессии.
-                Нет истории — усреднение по аналогам категории (cold-start).
+                Есть история — расчёт по МНК-регрессии.
+                Нет истории — расчёт недоступен до загрузки данных.
             </p>
 
             <div class="flex border-b border-gray-200 mb-4">
@@ -500,12 +527,8 @@
                                 <span class="inline-flex items-center text-[10px] uppercase tracking-wider text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded ring-1 ring-emerald-200">МНК · n={{ r.n_obs }}</span>
                             {% elif r.demand_source == 'fit' %}
                                 <span class="inline-flex items-center text-[10px] uppercase tracking-wider text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded ring-1 ring-amber-200">МНК · n={{ r.n_obs }} · R²={{ "%.2f"|format(r.r2) }}</span>
-                            {% elif 'category' in r.demand_source %}
-                                <span class="inline-flex items-center text-[10px] uppercase tracking-wider text-gray-600 bg-gray-100 px-1.5 py-0.5 rounded ring-1 ring-gray-200">cold-start · кат.</span>
-                            {% elif 'global' in r.demand_source %}
-                                <span class="inline-flex items-center text-[10px] uppercase tracking-wider text-gray-600 bg-gray-100 px-1.5 py-0.5 rounded ring-1 ring-gray-200">cold-start · МП</span>
                             {% else %}
-                                <span class="inline-flex items-center text-[10px] uppercase tracking-wider text-rose-700 bg-rose-50 px-1.5 py-0.5 rounded ring-1 ring-rose-200">дефолт</span>
+                                <span class="inline-flex items-center text-[10px] uppercase tracking-wider text-rose-700 bg-rose-50 px-1.5 py-0.5 rounded ring-1 ring-rose-200">нет оценки</span>
                             {% endif %}
                         </td>
                         <td class="px-4 py-2.5 text-right tabular text-gray-700">{{ "%.1f"|format(r.alpha_total * 100) }}%</td>
@@ -536,7 +559,7 @@
     </section>
 
     <footer class="text-center text-[11px] text-gray-400 pt-4">
-        ВКР Козлова Д.В. — Аналитическая система оптимизации продаж на маркетплейсах
+        ВКР Козлова Д.В. — Аналитическая система мониторинга продаж на маркетплейсах
     </footer>
 
     </main>
@@ -571,6 +594,31 @@
             document.querySelectorAll('input[name="sku"], input[name="sku_override"], #manualSku')
                 .forEach(el => { el.value = sku; });
             document.getElementById('salesMpForm')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function updateOverrideScope() {
+            const sel = document.getElementById('overrideMarketplaceCode');
+            if (!sel) return;
+            const mp = sel.value;
+            const hint = document.getElementById('overrideScopeHint');
+            document.querySelectorAll('[data-override-scope]').forEach((el) => {
+                const scope = el.getAttribute('data-override-scope');
+                const allowed = scope === 'all' || (scope === 'wb' && mp === 'wb') || (scope === 'ym' && mp === 'ym');
+                el.disabled = !allowed;
+                if (!allowed) el.value = '';
+                el.classList.toggle('bg-gray-100', !allowed);
+                el.classList.toggle('text-gray-400', !allowed);
+                el.classList.toggle('cursor-not-allowed', !allowed);
+            });
+            if (hint) {
+                if (mp === 'wb') {
+                    hint.textContent = 'Для Wildberries доступны общие поля и параметры WB.';
+                } else if (mp === 'ym') {
+                    hint.textContent = 'Для Яндекс Маркета доступны общие поля и параметры ЯМ. Параметры WB отключены.';
+                } else {
+                    hint.textContent = 'Для Ozon доступны только общие поля. Параметры WB и ЯМ отключены.';
+                }
+            }
         }
 
         function addManualSaleRow() {
@@ -683,6 +731,8 @@
 
         // init
         document.querySelectorAll('#resultsBody tr').forEach((tr, i) => { tr.dataset.origIdx = i; });
+        document.getElementById('overrideMarketplaceCode')?.addEventListener('change', updateOverrideScope);
+        updateOverrideScope();
         document.getElementById('searchInput').addEventListener('input', (e) => {
             tState.search = e.target.value.trim().toLowerCase();
             applyFilters();

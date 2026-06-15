@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS mp.users (
 
 INSERT INTO mp.users (email, password_hash, display_name, is_demo)
 VALUES (
-    'demo@asop.local',
+    'demo@mail.ru',
     '$2b$12$placeholder_will_be_replaced_in_bootstrap',
     NULL,
     TRUE

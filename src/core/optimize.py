@@ -35,7 +35,7 @@ def optimize_all() -> dict:
                 prices=[float(s[0]) for s in sales],
                 quantities=[float(s[1]) for s in sales],
                 is_promo=[bool(s[2]) for s in sales],
-                stock_qty=[float(s[3]) for s in sales],
+                stock_qty=[float(s[3]) if s[3] is not None else None for s in sales],
             )
             if est is None or est.b <= 0 or est.a <= 0:
                 continue

@@ -2,6 +2,9 @@ from __future__ import annotations
 
 import sys
 import secrets
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from fastapi.testclient import TestClient
 from sqlalchemy import text
@@ -10,7 +13,7 @@ from src.api.app import app
 from src.db import get_engine
 
 client = TestClient(app)
-_test_email = f"e2e_pipeline_{secrets.token_hex(4)}@asop.test"
+_test_email = f"e2e_pipeline_{secrets.token_hex(4)}@mail.ru"
 client.post("/register", data={
     "email": _test_email,
     "password": "e2e_pipeline_pwd",
@@ -23,7 +26,7 @@ TEST_CATEGORY = "food-healthy"
 TEST_SKU      = "E2E-TEA-001"
 
 def _cleanup() -> None:
-    with engine.connect() as c:
+    with engine.begin() as c:
         pids = [r[0] for r in c.execute(text(
             "SELECT product_id FROM mp.products WHERE sku LIKE 'E2E-%'"
         )).fetchall()]
@@ -42,6 +45,12 @@ def _step(n: str, title: str, ok: bool, extra: str = ""):
 def _count(table: str) -> int:
     with engine.connect() as c:
         return c.execute(text(f"SELECT COUNT(*) FROM mp.{table}")).scalar()
+
+
+def _cleanup_user() -> None:
+    with engine.begin() as c:
+        c.execute(text("DELETE FROM mp.users WHERE email = :e"), {"e": _test_email})
+
 
 def _c_total_for_product(pid: int, marketplace_code: str = "wb",
                           scheme: str = "FBO") -> float | None:
@@ -69,13 +78,18 @@ def _create_product(overrides: dict | None = None) -> int:
     r = client.post("/optimize", data=data)
     assert r.status_code == 200, r.text[:300]
     with engine.connect() as c:
-        return c.execute(text(
-            "SELECT product_id FROM mp.products WHERE sku=:s"
-        ), {"s": TEST_SKU}).scalar()
+        return c.execute(text("""
+            SELECT p.product_id
+              FROM mp.products p
+              JOIN mp.users u ON u.user_id = p.user_id
+             WHERE p.sku = :s AND u.email = :e
+             ORDER BY p.product_id DESC
+             LIMIT 1
+        """), {"s": TEST_SKU, "e": _test_email}).scalar()
 
 def run() -> None:
     print("=" * 70)
-    print("E2E pipeline test — АСОП-Маркет")
+    print("E2E pipeline test — АСМП-Маркет")
     print("=" * 70)
     _cleanup()
 
@@ -130,12 +144,12 @@ def run() -> None:
           c_baseline is not None and c_baseline > 0, f"C={c_baseline:.2f}")
 
     pid_o = _create_product({
-        "return_rate_override": "0.15",
+        "return_rate_override": "15",
         "storage_days_override": "60",
-        "promo_pct_override": "0.10",
+        "promo_pct_override": "10",
     })
     _step("5", "POST /optimize с overrides", pid_o == pid,
-          "return_rate=0.15, storage_days=60, promo_pct=0.10")
+          "return_rate=15%, storage_days=60, promo_pct=10%")
 
     c_override = _c_total_for_product(pid)
     _step("5a", "С overrides c_total_rub изменилось",
@@ -182,6 +196,8 @@ def run() -> None:
           snap_after == snap_before,
           f"\n          BEFORE: {snap_before}"
           f"\n          AFTER:  {snap_after}")
+
+    _cleanup_user()
 
     print()
     print("=" * 70)

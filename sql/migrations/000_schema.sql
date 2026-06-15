@@ -1,3 +1,42 @@
+CREATE SCHEMA IF NOT EXISTS mp;
+SET search_path TO mp, public;
+
+CREATE TABLE IF NOT EXISTS mp.marketplaces (
+    marketplace_id SERIAL PRIMARY KEY,
+    code VARCHAR(16) UNIQUE NOT NULL,
+    name VARCHAR(64) NOT NULL
+);
+
+INSERT INTO mp.marketplaces (code, name) VALUES
+    ('wb', 'Wildberries'),
+    ('ozon', 'Ozon'),
+    ('ym', 'Яндекс Маркет')
+ON CONFLICT (code) DO UPDATE SET name = EXCLUDED.name;
+
+CREATE TABLE IF NOT EXISTS mp.products (
+    product_id SERIAL PRIMARY KEY,
+    sku VARCHAR(64) UNIQUE NOT NULL,
+    name VARCHAR(256) NOT NULL,
+    category_id INT,
+    canonical_category_id INT,
+    weight_kg NUMERIC(10,3) NOT NULL,
+    volume_l NUMERIC(10,3) NOT NULL,
+    cost_rub NUMERIC(12,2) NOT NULL,
+    promo_rub NUMERIC(12,2) NOT NULL DEFAULT 0
+);
+
+CREATE TABLE IF NOT EXISTS mp.sales_history (
+    sale_id BIGSERIAL PRIMARY KEY,
+    product_id INT NOT NULL REFERENCES mp.products(product_id) ON DELETE CASCADE,
+    marketplace_id INT NOT NULL REFERENCES mp.marketplaces(marketplace_id),
+    obs_date DATE NOT NULL,
+    price_rub NUMERIC(12,2) NOT NULL,
+    qty INT NOT NULL,
+    is_promo BOOLEAN NOT NULL DEFAULT FALSE,
+    stock_qty INT
+);
+
+CREATE INDEX IF NOT EXISTS idx_sales_history_pid_mid ON mp.sales_history (product_id, marketplace_id);
 BEGIN;
 SET search_path TO mp, public;
 
@@ -41,7 +80,7 @@ CREATE TABLE IF NOT EXISTS mp.wb_category_map (
     canonical_category_id INT  NOT NULL REFERENCES mp.canonical_categories
 );
 COMMENT ON TABLE mp.wb_category_map IS
-    'Соответствие категорий Wildberries каноническим категориям АСОП-Маркет.';
+    'Соответствие категорий Wildberries каноническим категориям АСМП-Маркет.';
 
 CREATE TABLE IF NOT EXISTS mp.ozon_category_map (
     ozon_category_id      SERIAL PRIMARY KEY,
@@ -50,7 +89,7 @@ CREATE TABLE IF NOT EXISTS mp.ozon_category_map (
     canonical_category_id INT  NOT NULL REFERENCES mp.canonical_categories
 );
 COMMENT ON TABLE mp.ozon_category_map IS
-    'Соответствие категорий Ozon каноническим категориям АСОП-Маркет.';
+    'Соответствие категорий Ozon каноническим категориям АСМП-Маркет.';
 
 CREATE TABLE IF NOT EXISTS mp.ym_category_map (
     ym_category_id        SERIAL PRIMARY KEY,
@@ -59,7 +98,7 @@ CREATE TABLE IF NOT EXISTS mp.ym_category_map (
     canonical_category_id INT  NOT NULL REFERENCES mp.canonical_categories
 );
 COMMENT ON TABLE mp.ym_category_map IS
-    'Соответствие категорий Яндекс.Маркета каноническим категориям АСОП-Маркет.';
+    'Соответствие категорий Яндекс.Маркета каноническим категориям АСМП-Маркет.';
 
 CREATE TABLE IF NOT EXISTS mp.tariff_rule (
     tariff_rule_id         BIGSERIAL PRIMARY KEY,
@@ -213,3 +252,123 @@ SELECT table_name
 FROM information_schema.tables
 WHERE table_schema = 'mp'
 ORDER BY table_name;
+BEGIN;
+SET search_path TO mp, public;
+
+DROP TABLE IF EXISTS mp.tariff_rule_ozon_logistics_tier;
+DROP TABLE IF EXISTS mp.tariff_rule_ym_logistics_tier;
+
+CREATE TABLE IF NOT EXISTS mp.wb_logistics (
+    marketplace_id INT NOT NULL REFERENCES mp.marketplaces,
+    scheme         VARCHAR(16) NOT NULL,
+    base_rub       NUMERIC(8,2) NOT NULL,
+    per_liter_rub  NUMERIC(8,2) NOT NULL,
+    valid_from     DATE NOT NULL,
+    valid_to       DATE,
+    source_url     TEXT,
+    PRIMARY KEY (marketplace_id, scheme, valid_from)
+);
+COMMENT ON TABLE mp.wb_logistics IS 'Базовый тариф WB: ставка за 1-й литр + за каждый дополнительный. Категория влияет через КТР в tariff_rule_wb.';
+
+CREATE TABLE IF NOT EXISTS mp.ozon_logistics_tier (
+    marketplace_id      INT NOT NULL REFERENCES mp.marketplaces,
+    scheme              VARCHAR(16) NOT NULL,
+    volume_max_l        NUMERIC(8,3) NOT NULL,
+    base_rub            NUMERIC(8,2) NOT NULL,
+    per_liter_above_rub NUMERIC(8,2) NOT NULL DEFAULT 0,
+    valid_from          DATE NOT NULL,
+    valid_to            DATE,
+    source_url          TEXT,
+    PRIMARY KEY (marketplace_id, scheme, volume_max_l, valid_from)
+);
+COMMENT ON TABLE mp.ozon_logistics_tier IS 'Ступенчатая логистика Ozon: на каждый объёмный диапазон своя ставка.';
+
+CREATE TABLE IF NOT EXISTS mp.ym_logistics_tier (
+    marketplace_id INT NOT NULL REFERENCES mp.marketplaces,
+    scheme         VARCHAR(16) NOT NULL,
+    volume_max_l   NUMERIC(8,3) NOT NULL,
+    base_rub       NUMERIC(8,2) NOT NULL,
+    valid_from     DATE NOT NULL,
+    valid_to       DATE,
+    source_url     TEXT,
+    PRIMARY KEY (marketplace_id, scheme, volume_max_l, valid_from)
+);
+COMMENT ON TABLE mp.ym_logistics_tier IS 'Ступенчатая логистика Яндекс.Маркета.';
+
+ALTER TABLE mp.tariff_rule_wb DROP COLUMN IF EXISTS logistics_base_rub;
+ALTER TABLE mp.tariff_rule_wb DROP COLUMN IF EXISTS logistics_per_liter_rub;
+
+COMMIT;
+BEGIN;
+SET search_path TO mp, public;
+
+ALTER TABLE mp.products ALTER COLUMN category_id DROP NOT NULL;
+
+COMMIT;
+CREATE TABLE IF NOT EXISTS mp.users (
+    user_id        SERIAL PRIMARY KEY,
+    email          VARCHAR(128) UNIQUE NOT NULL,
+    password_hash  VARCHAR(255) NOT NULL,
+    display_name   VARCHAR(128),
+    is_admin       BOOLEAN NOT NULL DEFAULT FALSE,
+    is_demo        BOOLEAN NOT NULL DEFAULT FALSE,
+    created_at     TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+INSERT INTO mp.users (email, password_hash, display_name, is_demo)
+VALUES (
+    'demo@mail.ru',
+    '$2b$12$placeholder_will_be_replaced_in_bootstrap',
+    NULL,
+    TRUE
+) ON CONFLICT (email) DO NOTHING;
+
+ALTER TABLE mp.products
+    ADD COLUMN IF NOT EXISTS user_id INT
+    REFERENCES mp.users(user_id) ON DELETE CASCADE;
+
+UPDATE mp.products
+   SET user_id = (SELECT user_id FROM mp.users WHERE is_demo = TRUE LIMIT 1)
+ WHERE user_id IS NULL;
+
+ALTER TABLE mp.products ALTER COLUMN user_id SET NOT NULL;
+CREATE INDEX IF NOT EXISTS idx_products_user ON mp.products(user_id);
+BEGIN;
+SET search_path TO mp, public;
+
+ALTER TABLE mp.products DROP CONSTRAINT IF EXISTS products_sku_key;
+ALTER TABLE mp.products DROP CONSTRAINT IF EXISTS products_sku_user_key;
+ALTER TABLE mp.products
+    ADD CONSTRAINT products_sku_user_key UNIQUE (sku, user_id);
+
+COMMIT;
+BEGIN;
+SET search_path TO mp, public;
+
+ALTER TABLE mp.product_overrides
+    ADD COLUMN IF NOT EXISTS marketplace_id INT REFERENCES mp.marketplaces;
+
+UPDATE mp.product_overrides po
+   SET marketplace_id = m.marketplace_id
+  FROM mp.marketplaces m
+ WHERE po.marketplace_id IS NULL
+   AND m.code = 'wb';
+
+ALTER TABLE mp.product_overrides
+    ALTER COLUMN marketplace_id SET NOT NULL;
+
+ALTER TABLE mp.product_overrides
+    DROP CONSTRAINT IF EXISTS product_overrides_pkey;
+
+ALTER TABLE mp.product_overrides
+    ADD CONSTRAINT product_overrides_pkey PRIMARY KEY (product_id, marketplace_id);
+
+COMMIT;
+BEGIN;
+SET search_path TO mp, public;
+
+ALTER TABLE mp.product_overrides
+    ADD COLUMN IF NOT EXISTS packaging_fee_rub NUMERIC(8,2),
+    ADD COLUMN IF NOT EXISTS cofinance_pct NUMERIC(6,4);
+
+COMMIT;

@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 
 from sqlalchemy import text
@@ -35,6 +36,14 @@ def show_state() -> None:
         print(f"  {name:<22} {n}")
 
 
+def bootstrap_demo_user() -> None:
+    from src.auth import reset_demo_password
+
+    demo_password = os.getenv("DEMO_PASSWORD", "demo")
+    reset_demo_password(demo_password)
+    print("  demo-аккаунт: пароль установлен")
+
+
 def main() -> None:
     print("migrations:")
     apply_migrations()
@@ -43,6 +52,8 @@ def main() -> None:
     load_categories()
     print("\ntariffs:")
     load_tariffs()
+    print("\ndemo:")
+    bootstrap_demo_user()
     print("\nstate:")
     show_state()
 

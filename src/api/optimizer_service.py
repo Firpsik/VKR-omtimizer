@@ -133,7 +133,9 @@ def optimize_single_product(
     sku: str, name: str, category_code: str,
     weight_kg: float, volume_l: float, cost_rub: float, promo_rub: float,
     user_id: int,
-    overrides: dict | None = None, stock_qty: int | None = None,
+    overrides: dict | None = None,
+    override_marketplace_code: str = "wb",
+    stock_qty_limit: int | None = None,
 ) -> dict:
     engine = get_engine()
     with engine.begin() as conn:
@@ -172,17 +174,24 @@ def optimize_single_product(
                 mapped["warehouse_coef"] = float(overrides["kwh"])
             if overrides.get("promo_pct") not in (None, ""):
                 mapped["promo_pct"] = float(overrides["promo_pct"])
+            if overrides.get("packaging_fee_rub") not in (None, ""):
+                mapped["packaging_fee_rub"] = float(overrides["packaging_fee_rub"])
+            if overrides.get("cofinance_pct") not in (None, ""):
+                mapped["cofinance_pct"] = float(overrides["cofinance_pct"])
             if mapped:
                 cols = ", ".join(mapped.keys())
                 placeholders = ", ".join(f":{k}" for k in mapped.keys())
                 updates = ", ".join(f"{k}=EXCLUDED.{k}" for k in mapped.keys())
+                marketplace_id = conn.execute(text(
+                    "SELECT marketplace_id FROM mp.marketplaces WHERE code = :c"
+                ), {"c": override_marketplace_code}).scalar_one()
                 conn.execute(text(f"""
-                    INSERT INTO mp.product_overrides (product_id, {cols}, updated_at)
-                    VALUES (:pid, {placeholders}, now())
-                    ON CONFLICT (product_id) DO UPDATE SET {updates}, updated_at = now()
-                """), {"pid": pid, **mapped})
+                    INSERT INTO mp.product_overrides (product_id, marketplace_id, {cols}, updated_at)
+                    VALUES (:pid, :mid, {placeholders}, now())
+                    ON CONFLICT (product_id, marketplace_id) DO UPDATE SET {updates}, updated_at = now()
+                """), {"pid": pid, "mid": marketplace_id, **mapped})
 
-    return _recompute_for_product(pid)
+    return _recompute_for_product(pid, stock_qty_limit=stock_qty_limit)
 
 
 def recompute_optimization(sku: str, user_id: int) -> dict:
@@ -192,7 +201,7 @@ def recompute_optimization(sku: str, user_id: int) -> dict:
     return _recompute_for_product(pid)
 
 
-def _recompute_for_product(pid: int) -> dict:
+def _recompute_for_product(pid: int, stock_qty_limit: int | None = None) -> dict:
     engine = get_engine()
     n_pairs = 0
     n_feasible = 0
@@ -220,7 +229,7 @@ def _recompute_for_product(pid: int) -> dict:
                 prices=[float(s[0]) for s in sales],
                 quantities=[float(s[1]) for s in sales],
                 is_promo=[bool(s[2]) for s in sales],
-                stock_qty=[float(s[3]) for s in sales],
+                stock_qty=[float(s[3]) if s[3] is not None else None for s in sales],
             )
             if est is None or est.b <= 0 or est.a <= 0:
                 continue
@@ -269,7 +278,8 @@ def _recompute_for_product(pid: int) -> dict:
                 continue
             s_star = 0.5 * (a / b + c / m)
             q_star = max(0.0, a - b * s_star)
-            profit = (m * s_star - c) * q_star
+            q_used = min(q_star, float(stock_qty_limit)) if stock_qty_limit is not None and stock_qty_limit >= 0 else q_star
+            profit = (m * s_star - c) * q_used
             conn.execute(text("""
                 INSERT INTO mp.optimization_results
                     (product_id, marketplace_id, scheme,
@@ -277,7 +287,7 @@ def _recompute_for_product(pid: int) -> dict:
                 VALUES (:p, :m, :s, :pmin, :pmax, :ss, :qs, :ps, TRUE, FALSE)
             """), {"p": pid, "m": mid, "s": scheme,
                     "pmin": c / m, "pmax": a / b,
-                    "ss": s_star, "qs": q_star, "ps": profit})
+                    "ss": s_star, "qs": q_used, "ps": profit})
             n_feasible += 1
             per_results.append({"mid": mid, "scheme": scheme, "profit": profit})
 
@@ -362,6 +372,7 @@ def upload_marketplace_report(
     return {
         "marketplace_code": mp_code, "parsed": len(sales),
         "inserted": inserted, "skipped_unknown_sku": skipped_unknown,
+        "n_loaded": inserted, "n_skipped": skipped_unknown,
         "by_sku": by_sku, "recomputed_skus": recomputed,
     }
 
@@ -390,7 +401,7 @@ def add_sales_observations(
                     "ip": obs.get("is_promo", False),
                     "st": obs.get("stock_qty")})
             inserted += 1
-    return {"inserted": inserted, "deleted": deleted}
+    return {"inserted": inserted, "deleted": deleted, "n_loaded": inserted, "n_skipped": 0}
 
 
 def delete_sales(sku: str, user_id: int, marketplace_code: str | None = None) -> dict:

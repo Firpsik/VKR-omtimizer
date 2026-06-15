@@ -13,21 +13,21 @@ from src.db import get_engine
 
 
 engine = get_engine()
-ALICE = ("alice@asop.test", "alice_pwd_123", "Алиса Тестовая")
-BOB = ("bob@asop.test", "bob_pwd_456", "Боб Тестовый")
+ALICE = ("alice@mail.ru", "alice_pwd_123", "Алиса Тестовая")
+BOB = ("bob@mail.ru", "bob_pwd_456", "Боб Тестовый")
 
 
 def _cleanup_users():
     with engine.connect() as c:
         ids = [r[0] for r in c.execute(text(
             "SELECT product_id FROM mp.products p JOIN mp.users u USING (user_id) "
-            "WHERE u.email IN ('alice@asop.test','bob@asop.test')"
+            "WHERE u.email IN ('alice@mail.ru','bob@mail.ru')"
         )).fetchall()]
         for pid in ids:
             for t in ('sales_history','optimization_results','demand_params','unit_economics','product_overrides'):
                 c.execute(text(f"DELETE FROM mp.{t} WHERE product_id = :p"), {"p": pid})
         c.execute(text("DELETE FROM mp.products WHERE product_id = ANY(:p)"), {"p": ids})
-        c.execute(text("DELETE FROM mp.users WHERE email IN ('alice@asop.test','bob@asop.test')"))
+        c.execute(text("DELETE FROM mp.users WHERE email IN ('alice@mail.ru','bob@mail.ru')"))
         c.commit()
 
 
@@ -44,7 +44,7 @@ def _client() -> TestClient:
 
 def run():
     print("=" * 70)
-    print("E2E auth & multi-tenant test — АСОП-Маркет")
+    print("E2E auth & multi-tenant test — АСМП-Маркет")
     print("=" * 70)
 
     _cleanup_users()

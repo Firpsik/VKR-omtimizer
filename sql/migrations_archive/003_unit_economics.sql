@@ -278,6 +278,8 @@ $$ LANGUAGE plpgsql STABLE;
 COMMENT ON FUNCTION mp.fn_unit_economics IS
 'Диспетчер: выбирает специализированную функцию расчёта по коду маркетплейса.';
 
+DROP VIEW IF EXISTS mp.v_unit_economics CASCADE;
+
 CREATE OR REPLACE VIEW mp.v_unit_economics AS
 SELECT
     tr.tariff_rule_id,
