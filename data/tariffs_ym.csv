@@ -39,3 +39,25 @@ sport-fitness,FBY,0.0900,0.0450,500,0.0150,15,60,0.12,0,0.06,30,30,0.85,0.15,202
 sport-fitness,FBS,0.1000,0.0450,500,0.0150,0,0,0,0,0.06,30,30,0.85,0.15,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,Фитнес
 food-healthy,FBY,0.0900,0.0450,500,0.0150,15,60,0.10,0,0.05,30,30,0.95,0.05,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,БАДы и здоровое питание
 food-healthy,FBS,0.1000,0.0450,500,0.0150,0,0,0,0,0.05,30,30,0.95,0.05,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,БАДы и здоровое питание
+appl-kitchen-major,FBY,0.0800,0.0450,500,0.0150,15,60,0.12,0,0.05,30,30,0.95,0.05,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,appl-kitchen-major
+appl-kitchen-major,FBS,0.0900,0.0450,500,0.0150,0,0,0,0,0.05,30,30,0.95,0.05,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,appl-kitchen-major
+auto-chemistry,FBY,0.0800,0.0450,500,0.0150,15,60,0.10,0,0.05,30,30,0.95,0.05,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,auto-chemistry
+auto-chemistry,FBS,0.0900,0.0450,500,0.0150,0,0,0,0,0.05,30,30,0.95,0.05,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,auto-chemistry
+auto-parts,FBY,0.0800,0.0450,500,0.0150,15,60,0.10,0,0.05,30,30,0.95,0.05,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,auto-parts
+auto-parts,FBS,0.0900,0.0450,500,0.0150,0,0,0,0,0.05,30,30,0.95,0.05,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,auto-parts
+bh-books,FBY,0.0900,0.0450,500,0.0150,15,60,0.10,0,0.06,30,30,0.90,0.10,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,bh-books
+bh-books,FBS,0.1000,0.0450,500,0.0150,0,0,0,0,0.06,30,30,0.90,0.10,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,bh-books
+bh-stationery,FBY,0.0900,0.0450,500,0.0150,15,60,0.10,0,0.06,30,30,0.90,0.10,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,bh-stationery
+bh-stationery,FBS,0.1000,0.0450,500,0.0150,0,0,0,0,0.06,30,30,0.90,0.10,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,bh-stationery
+electronics-tv,FBY,0.0500,0.0450,500,0.0150,15,60,0.10,0,0.05,30,30,0.95,0.05,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,electronics-tv
+electronics-tv,FBS,0.0600,0.0450,500,0.0150,0,0,0,0,0.05,30,30,0.95,0.05,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,electronics-tv
+garden-grills,FBY,0.0900,0.0450,500,0.0150,15,60,0.11,0,0.06,30,30,0.90,0.10,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,garden-grills
+garden-grills,FBS,0.1000,0.0450,500,0.0150,0,0,0,0,0.06,30,30,0.90,0.10,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,garden-grills
+home-bath-kitchen,FBY,0.0900,0.0450,500,0.0150,15,60,0.11,0,0.06,30,30,0.90,0.10,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,home-bath-kitchen
+home-bath-kitchen,FBS,0.1000,0.0450,500,0.0150,0,0,0,0,0.06,30,30,0.90,0.10,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,home-bath-kitchen
+kids-school,FBY,0.0900,0.0450,500,0.0150,15,60,0.10,0,0.06,30,30,0.90,0.10,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,kids-school
+kids-school,FBS,0.1000,0.0450,500,0.0150,0,0,0,0,0.06,30,30,0.90,0.10,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,kids-school
+pets-food,FBY,0.0900,0.0450,500,0.0150,15,60,0.10,0,0.05,30,30,0.95,0.05,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,pets-food
+pets-food,FBS,0.1000,0.0450,500,0.0150,0,0,0,0,0.05,30,30,0.95,0.05,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,pets-food
+sport-team,FBY,0.0900,0.0450,500,0.0150,15,60,0.12,0,0.06,30,30,0.85,0.15,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,sport-team
+sport-team,FBS,0.1000,0.0450,500,0.0150,0,0,0,0,0.06,30,30,0.85,0.15,2026-01-01,https://yandex.ru/support2/marketplace/ru/account/tariffs/main,sport-team

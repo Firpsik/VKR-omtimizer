@@ -176,8 +176,6 @@ def optimize_single_product(
                 mapped["promo_pct"] = float(overrides["promo_pct"])
             if overrides.get("packaging_fee_rub") not in (None, ""):
                 mapped["packaging_fee_rub"] = float(overrides["packaging_fee_rub"])
-            if overrides.get("cofinance_pct") not in (None, ""):
-                mapped["cofinance_pct"] = float(overrides["cofinance_pct"])
             if mapped:
                 cols = ", ".join(mapped.keys())
                 placeholders = ", ".join(f":{k}" for k in mapped.keys())

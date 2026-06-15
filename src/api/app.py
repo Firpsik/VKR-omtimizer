@@ -190,7 +190,6 @@ async def run_optimization(
     kwh_override: float = Form(None),
     promo_pct_override: float = Form(None),
     packaging_fee_override: float = Form(None),
-    cofinance_pct_override: float = Form(None),
     user: dict = Depends(require_writeable_user),
 ):
     overrides = {}
@@ -207,8 +206,6 @@ async def run_optimization(
         overrides["promo_pct"] = promo_pct_override / 100.0
     if mp_code == "ym" and packaging_fee_override is not None:
         overrides["packaging_fee_rub"] = packaging_fee_override
-    if mp_code == "ym" and cofinance_pct_override is not None:
-        overrides["cofinance_pct"] = cofinance_pct_override / 100.0
     try:
         result = optimize_single_product(
             sku=sku, name=name, category_code=category_code,

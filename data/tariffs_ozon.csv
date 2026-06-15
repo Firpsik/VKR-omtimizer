@@ -39,3 +39,25 @@ sport-fitness,FBO,0.1700,0.0550,20,500,0.0150,0,60,0.12,0,0.06,0.02,80,75,0.85,0
 sport-fitness,FBS,0.1700,0.0550,20,500,0.0150,35,0,0,0,0.06,0.02,80,75,0.85,0.15,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,Фитнес
 food-healthy,FBO,0.1700,0.0550,20,500,0.0150,0,60,0.10,0,0.05,0.02,80,75,0.95,0.05,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,БАДы и здоровое питание
 food-healthy,FBS,0.1700,0.0550,20,500,0.0150,35,0,0,0,0.05,0.02,80,75,0.95,0.05,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,БАДы и здоровое питание
+appl-kitchen-major,FBO,0.1600,0.0550,20,500,0.0150,0,60,0.12,0,0.05,0.02,80,75,0.95,0.05,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,appl-kitchen-major
+appl-kitchen-major,FBS,0.1600,0.0550,20,500,0.0150,35,0,0,0,0.05,0.02,80,75,0.95,0.05,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,appl-kitchen-major
+auto-chemistry,FBO,0.1800,0.0550,20,500,0.0150,0,60,0.10,0,0.05,0.02,80,75,0.95,0.05,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,auto-chemistry
+auto-chemistry,FBS,0.1800,0.0550,20,500,0.0150,35,0,0,0,0.05,0.02,80,75,0.95,0.05,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,auto-chemistry
+auto-parts,FBO,0.1800,0.0550,20,500,0.0150,0,60,0.10,0,0.05,0.02,80,75,0.95,0.05,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,auto-parts
+auto-parts,FBS,0.1800,0.0550,20,500,0.0150,35,0,0,0,0.05,0.02,80,75,0.95,0.05,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,auto-parts
+bh-books,FBO,0.1600,0.0550,20,500,0.0150,0,60,0.10,0,0.06,0.02,80,75,0.90,0.10,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,bh-books
+bh-books,FBS,0.1600,0.0550,20,500,0.0150,35,0,0,0,0.06,0.02,80,75,0.90,0.10,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,bh-books
+bh-stationery,FBO,0.1600,0.0550,20,500,0.0150,0,60,0.10,0,0.06,0.02,80,75,0.90,0.10,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,bh-stationery
+bh-stationery,FBS,0.1600,0.0550,20,500,0.0150,35,0,0,0,0.06,0.02,80,75,0.90,0.10,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,bh-stationery
+electronics-tv,FBO,0.1000,0.0550,20,500,0.0150,0,60,0.10,0,0.05,0.02,80,75,0.95,0.05,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,electronics-tv
+electronics-tv,FBS,0.1000,0.0550,20,500,0.0150,35,0,0,0,0.05,0.02,80,75,0.95,0.05,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,electronics-tv
+garden-grills,FBO,0.1700,0.0550,20,500,0.0150,0,60,0.11,0,0.06,0.02,80,75,0.90,0.10,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,garden-grills
+garden-grills,FBS,0.1700,0.0550,20,500,0.0150,35,0,0,0,0.06,0.02,80,75,0.90,0.10,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,garden-grills
+home-bath-kitchen,FBO,0.1800,0.0550,20,500,0.0150,0,60,0.11,0,0.06,0.02,80,75,0.90,0.10,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,home-bath-kitchen
+home-bath-kitchen,FBS,0.1800,0.0550,20,500,0.0150,35,0,0,0,0.06,0.02,80,75,0.90,0.10,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,home-bath-kitchen
+kids-school,FBO,0.1600,0.0550,20,500,0.0150,0,60,0.10,0,0.06,0.02,80,75,0.90,0.10,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,kids-school
+kids-school,FBS,0.1600,0.0550,20,500,0.0150,35,0,0,0,0.06,0.02,80,75,0.90,0.10,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,kids-school
+pets-food,FBO,0.1700,0.0550,20,500,0.0150,0,60,0.10,0,0.05,0.02,80,75,0.95,0.05,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,pets-food
+pets-food,FBS,0.1700,0.0550,20,500,0.0150,35,0,0,0,0.05,0.02,80,75,0.95,0.05,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,pets-food
+sport-team,FBO,0.1700,0.0550,20,500,0.0150,0,60,0.12,0,0.06,0.02,80,75,0.85,0.15,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,sport-team
+sport-team,FBS,0.1700,0.0550,20,500,0.0150,35,0,0,0,0.06,0.02,80,75,0.85,0.15,2026-01-01,https://docs.ozon.ru/global/fulfillment/fbs-pricing/,sport-team
