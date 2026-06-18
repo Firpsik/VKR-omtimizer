@@ -646,7 +646,7 @@
                 const qty = parseInt(inputs[2].value);
                 const isPromo = inputs[3].checked;
                 if (!date || isNaN(price) || isNaN(qty)) continue;
-                observations.push({date, price, qty, is_promo: isPromo});
+                observations.push({ obs_date: date, price_rub: price, qty, is_promo: isPromo});
             }
             if (observations.length === 0) { status.textContent = 'Заполните хотя бы одну строку'; status.className = 'text-xs text-rose-600'; return; }
             try {
